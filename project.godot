@@ -11,8 +11,19 @@ config_version=5
 [application]
 
 config/name="Lunar lander"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+config/server_url=""
+config/server_url_production="games.yvonnickfrin.dev"
+
+[autoload]
+
+Config="*res://config.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_multiplayer/plugin.cfg")
 
 [rendering]
 

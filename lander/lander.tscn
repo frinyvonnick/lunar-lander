@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dc4ctsecgevq8"]
+
+[ext_resource type="Script" uid="uid://daf6prxfrf7ik" path="res://lander/lander.gd" id="1_8ugvx"]
+[ext_resource type="PackedScene" uid="uid://cpirnm4hresnu" path="res://lander/thruster.tscn" id="2_8lo0i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkjij"]
+size = Vector2(96, 64)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_8lo0i"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:thurster_enabled")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+
+[node name="Lander" type="CharacterBody2D"]
+script = ExtResource("1_8ugvx")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(0, -32)
+color = Color(0.8483436, 0.33577177, 0.3459634, 1)
+polygon = PackedVector2Array(-32, 0, 32, 0, 48, 48, 48, 64, 40, 64, 40, 56, 32, 48, -32, 48, -40, 56, -40, 64, -48, 64, -48, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mkjij")
+
+[node name="Thruster" parent="." instance=ExtResource("2_8lo0i")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(0, 16)
+scale = Vector2(0.5, 0.5)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_8lo0i")

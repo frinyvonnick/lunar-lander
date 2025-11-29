@@ -1,13 +1,27 @@
 extends OnlineInput
-## Player input - define your input properties here and sync them via MultiplayerSynchronizer.
-##
-## Example for a top-down game:
-##   var direction: Vector2 = Vector2.ZERO
-##
-##   func _process(delta):
-##       if not is_multiplayer_authority():
-##           return
-##       direction = Vector2(
-##           Input.get_axis("move_left", "move_right"),
-##           Input.get_axis("move_up", "move_down"),
-##       )
+class_name PlayerInput
+
+@export var rotation_force : float
+@export var thrust_force : float
+@export var rotation_enabled := true
+@export var thrust_enabled := true
+
+func _process(delta):
+	if not is_multiplayer_authority():
+		return
+	if rotation_enabled:
+		if Input.is_action_pressed("rotate_left"):
+			rotation_force = -1
+			
+		if Input.is_action_pressed("rotate_right"):
+			rotation_force = 1
+			
+		if Input.is_action_just_released("rotate_left") or Input.is_action_just_released("rotate_right"):
+			rotation_force = 0
+	
+	if thrust_enabled:
+		if Input.is_action_pressed("thrust"):
+			thrust_force = 1
+			
+		if Input.is_action_just_released("thrust"):
+			thrust_force = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://em0ocayifla6"]
+[gd_scene load_steps=11 format=3 uid="uid://em0ocayifla6"]
 
 [ext_resource type="Script" uid="uid://cmxlqvajc5idu" path="res://game.gd" id="1_game"]
 [ext_resource type="PackedScene" path="res://addons/godot_multiplayer/ui/online_multiplayer_screen.tscn" id="2_lobby"]
@@ -8,11 +8,29 @@
 [ext_resource type="Script" uid="uid://bmiddwn30p52v" path="res://addons/godot_multiplayer/lobby/lobby_manager.gd" id="6_manager"]
 [ext_resource type="Script" uid="uid://c8scq0u65cci" path="res://addons/godot_multiplayer/lobby/lobby_server.gd" id="7_server"]
 [ext_resource type="Script" uid="uid://x3ptl6rgkiyc" path="res://addons/godot_multiplayer/game/player_spawner.gd" id="8_spawner"]
+[ext_resource type="Script" uid="uid://b6t70qmlp7saj" path="res://level.gd" id="8_vef74"]
+[ext_resource type="PackedScene" uid="uid://dc4ctsecgevq8" path="res://lander/lander.tscn" id="10_hve3p"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_game")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Stats" type="Label" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="OnlineMultiplayerScreen" parent="CanvasLayer" node_paths=PackedStringArray("lobby_client") instance=ExtResource("2_lobby")]
 unique_name_in_owner = true
@@ -41,12 +59,22 @@ script = ExtResource("7_server")
 
 [node name="Level" type="Node2D" parent="."]
 unique_name_in_owner = true
+script = ExtResource("8_vef74")
 
 [node name="PlayerSpawner" type="MultiplayerSpawner" parent="Level"]
 unique_name_in_owner = true
 script = ExtResource("8_spawner")
 player_scene_path = "res://player/player.tscn"
 spawn_root = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="Level"]
+position = Vector2(576, 324)
+
+[node name="Lander" parent="Level" instance=ExtResource("10_hve3p")]
+unique_name_in_owner = true
+position = Vector2(576, 324)
+scale = Vector2(0.5, 0.5)
+gravity = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)

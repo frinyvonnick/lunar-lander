@@ -1,12 +1,35 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=5 format=3 uid="uid://dwpyinjxsjxlm"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_player"]
-[ext_resource type="Script" path="res://player/player_input.gd" id="2_input"]
+[ext_resource type="Script" uid="uid://wwql6j07jrtp" path="res://player/player.gd" id="1_player"]
+[ext_resource type="Script" uid="uid://b56gv24ow065s" path="res://player/player_input.gd" id="2_input"]
 
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_player"]
-properties/0/path = NodePath(".:position")
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_rkbax"]
+properties/0/path = NodePath(".:thrust_enabled")
 properties/0/spawn = true
-properties/0/replication_mode = 1
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:rotation_enabled")
+properties/1/spawn = true
+properties/1/replication_mode = 2
+properties/2/path = NodePath(".:thrust_force")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:rotation_force")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_g1dw6"]
+properties/0/path = NodePath(".:thrust_enabled")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+properties/1/path = NodePath(".:thrust_force")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:rotation_enabled")
+properties/2/spawn = true
+properties/2/replication_mode = 2
+properties/3/path = NodePath(".:rotation_force")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [node name="Player" type="Node2D"]
 script = ExtResource("1_player")
@@ -15,5 +38,8 @@ script = ExtResource("1_player")
 unique_name_in_owner = true
 script = ExtResource("2_input")
 
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="Input"]
+replication_config = SubResource("SceneReplicationConfig_rkbax")
+
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
-replication_config = SubResource("SceneReplicationConfig_player")
+replication_config = SubResource("SceneReplicationConfig_g1dw6")

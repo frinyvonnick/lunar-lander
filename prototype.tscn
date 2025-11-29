@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://8scijdnb8qhh"]
+
+[ext_resource type="Script" uid="uid://b3hywhp6lwlhx" path="res://prototype.gd" id="1_883nb"]
+[ext_resource type="PackedScene" uid="uid://dwpyinjxsjxlm" path="res://player/player.tscn" id="1_gxbh7"]
+[ext_resource type="PackedScene" uid="uid://dc4ctsecgevq8" path="res://lander/lander.tscn" id="2_vo8sw"]
+[ext_resource type="PackedScene" uid="uid://cp1mvbtj7txoa" path="res://ground/ground.tscn" id="4_7fmhn"]
+
+[node name="Prototype" type="Node2D"]
+script = ExtResource("1_883nb")
+
+[node name="Player" parent="." instance=ExtResource("1_gxbh7")]
+unique_name_in_owner = true
+local_mode = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Lander" parent="." instance=ExtResource("2_vo8sw")]
+unique_name_in_owner = true
+position = Vector2(576, 324)
+scale = Vector2(0.5, 0.5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Stats" type="Label" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Ground" parent="." node_paths=PackedStringArray("terrain_line") instance=ExtResource("4_7fmhn")]
+terrain_line = NodePath("../Line2D")
+
+[node name="Line2D" type="Line2D" parent="."]
+visible = false
+points = PackedVector2Array(48, 544, 144, 472, 272, 528, 440, 552, 584, 456, 888, 488, 1016, 544, 1120, 472)
+width = 0.0

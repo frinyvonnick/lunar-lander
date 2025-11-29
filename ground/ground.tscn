@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp1mvbtj7txoa"]
+
+[ext_resource type="Script" uid="uid://dmtnfpx170y48" path="res://ground/ground.gd" id="1_nnmag"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rnh4w"]
+
+[node name="Ground" type="Node2D"]
+script = ExtResource("1_nnmag")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_rnh4w")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+unique_name_in_owner = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+unique_name_in_owner = true

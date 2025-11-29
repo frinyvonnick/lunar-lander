@@ -96,7 +96,15 @@ func _setup_server():
 	hide_screen(online_multiplayer_screen)
 
 	lobby_manager.on_game_start_requested.connect(func(slots):
-		player_spawner.spawn_players(slots)
+		player_spawner.spawn_players(slots, func(index, slot: LobbySlot, avatar: Node):
+			var player = avatar as Player
+			if index == 0 :
+				player.rotation_enabled = true
+				player.thrust_enabled = false
+			else :
+				player.rotation_enabled = false
+				player.thrust_enabled = true
+		)
 		_on_game_started.rpc()
 	)
 

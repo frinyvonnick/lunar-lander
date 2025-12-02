@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmxlqvajc5idu" path="res://game.gd" id="1_game"]
 [ext_resource type="PackedScene" path="res://addons/godot_multiplayer/ui/online_multiplayer_screen.tscn" id="2_lobby"]
-[ext_resource type="PackedScene" path="res://addons/godot_multiplayer/ui/waiting_room.tscn" id="3_waiting"]
+[ext_resource type="PackedScene" uid="uid://d31wk3at4d8av" path="res://addons/godot_multiplayer/ui/waiting_room.tscn" id="3_waiting"]
 [ext_resource type="Script" uid="uid://duduqyiwbiuho" path="res://addons/godot_multiplayer/game/game_instance.gd" id="4_instance"]
 [ext_resource type="PackedScene" uid="uid://62t4tlgto46x" path="res://menu/menu.tscn" id="4_mfdv2"]
 [ext_resource type="Script" uid="uid://ddoxcwncfai8f" path="res://addons/godot_multiplayer/lobby/lobby_client.gd" id="5_client"]

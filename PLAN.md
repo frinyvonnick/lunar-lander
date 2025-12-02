@@ -12,126 +12,126 @@
 
 ---
 
-## Phase 2 : Core Loop (jouable de bout en bout)
+## Phase 2 : Core Loop (jouable de bout en bout) - EN COURS
 
-### 2.1 - Écran de défaite (crash)
-- Afficher un écran quand le module crash
-- Feedback visuel clair (explosion, message)
-- Les deux joueurs voient le même écran
+### 2.1 - Écran de défaite (crash) ✅
+- [x] Afficher un écran quand le module crash
+- [x] Feedback visuel clair (explosion, message)
+- [x] Les deux joueurs voient le même écran
 
-### 2.2 - Écran de victoire (atterrissage)
-- Afficher un écran quand l'atterrissage est réussi
-- Feedback visuel positif
-- Les deux joueurs voient le même écran
+### 2.2 - Écran de victoire (atterrissage) ✅
+- [x] Afficher un écran quand l'atterrissage est réussi
+- [x] Feedback visuel positif
+- [x] Les deux joueurs voient le même écran
 
-### 2.3 - Possibilité de rejouer
-- Bouton "Rejouer" sur les écrans victoire/défaite
-- Reset du niveau (position, fuel, état)
+### 2.3 - Possibilité de rejouer ⚠️
+- [ ] Bouton "Rejouer" sur les écrans victoire/défaite
+- [x] Reset du niveau (position, fuel, état)
 
 ### 2.4 - Système de fuel
-- Quantité de fuel limitée
-- Consommation lors de la propulsion
-- Consommation lors de la rotation (optionnel)
-- Game over si fuel = 0 et pas atterri
+- [ ] Quantité de fuel limitée
+- [ ] Consommation lors de la propulsion
+- [ ] Consommation lors de la rotation (optionnel)
+- [ ] Game over si fuel = 0 et pas atterri
 
 ### 2.5 - UI Fuel
-- Jauge de fuel visible
-- Alarme visuelle quand fuel bas
-- Alarme sonore quand fuel bas (optionnel)
+- [ ] Jauge de fuel visible
+- [ ] Alarme visuelle quand fuel bas
+- [ ] Alarme sonore quand fuel bas (optionnel)
 
 ---
 
-## Phase 3 : Gameplay complet
+## Phase 3 : Gameplay complet - À FAIRE
 
 ### 3.1 - Indicateur de proximité/danger
-- RayCast pour détecter le sol à l'avance
-- Indicateur visuel (couleur) basé sur vitesse d'impact prévue
-- Indicateur d'alignement avec la surface
+- [ ] RayCast pour détecter le sol à l'avance
+- [ ] Indicateur visuel (couleur) basé sur vitesse d'impact prévue
+- [ ] Indicateur d'alignement avec la surface
 
 ### 3.2 - Zones d'atterrissage avec multiplicateur
-- Zones plates = multiplicateur faible (x1)
-- Zones difficiles (petites, en pente) = multiplicateur élevé (x2, x3, x5)
-- Visuel distinct pour chaque zone
+- [ ] Zones plates = multiplicateur faible (x1)
+- [ ] Zones difficiles (petites, en pente) = multiplicateur élevé (x2, x3, x5)
+- [ ] Visuel distinct pour chaque zone
 
 ### 3.3 - Système de score
-- Points basés sur : fuel restant, multiplicateur zone, précision atterrissage
-- Affichage du score en temps réel
-- Score final à la victoire
+- [ ] Points basés sur : fuel restant, multiplicateur zone, précision atterrissage
+- [ ] Affichage du score en temps réel
+- [ ] Score final à la victoire
 
 ### 3.4 - Système de niveaux
-- Plusieurs niveaux avec terrains différents
-- Enchaînement automatique après victoire
-- Score cumulé sur plusieurs niveaux
+- [ ] Plusieurs niveaux avec terrains différents
+- [ ] Enchaînement automatique après victoire
+- [ ] Score cumulé sur plusieurs niveaux
 
 ### 3.5 - Difficulté progressive
-- Gravité plus forte
-- Moins de fuel de départ
-- Terrains plus accidentés
-- Zones d'atterrissage plus petites
+- [ ] Gravité plus forte
+- [ ] Moins de fuel de départ
+- [ ] Terrains plus accidentés
+- [ ] Zones d'atterrissage plus petites
 
 ### 3.6 - Système de vent
-- Force horizontale variable
-- Indicateur visuel de direction/force du vent
-- Change au cours du niveau ou entre niveaux
+- [ ] Force horizontale variable
+- [ ] Indicateur visuel de direction/force du vent
+- [ ] Change au cours du niveau ou entre niveaux
 
 ---
 
-## Phase 4 : Polish visuel
+## Phase 4 : Polish visuel - À FAIRE
 
 ### 4.1 - Animation poussière à l'approche
-- Particules de poussière quand proche du sol
-- Intensité basée sur la distance et la puissance du thruster
+- [ ] Particules de poussière quand proche du sol
+- [ ] Intensité basée sur la distance et la puissance du thruster
 
 ### 4.2 - Animation glissement + étincelles
-- Sur atterrissage en pente, le module glisse légèrement
-- Étincelles au contact avec le sol
+- [ ] Sur atterrissage en pente, le module glisse légèrement
+- [ ] Étincelles au contact avec le sol
 
 ### 4.3 - Explosion au crash
-- Animation d'explosion
-- Débris qui volent
-- Screen shake (optionnel)
+- [ ] Animation d'explosion
+- [ ] Débris qui volent
+- [ ] Screen shake (optionnel)
 
 ### 4.4 - Fond étoilé
-- Étoiles en arrière-plan
-- Parallax scrolling (optionnel)
+- [ ] Étoiles en arrière-plan
+- [ ] Parallax scrolling (optionnel)
 
 ### 4.5 - Indicateur d'altitude
-- Afficher la hauteur par rapport au sol
-- Barre ou chiffre
+- [ ] Afficher la hauteur par rapport au sol
+- [ ] Barre ou chiffre
 
 ---
 
-## Phase 5 : Audio
+## Phase 5 : Audio - À FAIRE
 
 ### 5.1 - Son du thruster
-- Son continu quand propulsion active
-- Variation selon puissance (optionnel)
+- [ ] Son continu quand propulsion active
+- [ ] Variation selon puissance (optionnel)
 
 ### 5.2 - Alarme fuel bas
-- Son d'alerte quand fuel < 20%
-- Bips de plus en plus rapides
+- [ ] Son d'alerte quand fuel < 20%
+- [ ] Bips de plus en plus rapides
 
 ### 5.3 - Sons d'événements
-- Son d'explosion au crash
-- Son d'atterrissage réussi
-- Son de contact avec le sol
+- [ ] Son d'explosion au crash
+- [ ] Son d'atterrissage réussi
+- [ ] Son de contact avec le sol
 
 ### 5.4 - Musique d'ambiance
-- Musique spatiale/tension
-- Variation selon situation (calm, danger)
+- [ ] Musique spatiale/tension
+- [ ] Variation selon situation (calm, danger)
 
 ---
 
-## Phase 6 : Meta-game & Social
+## Phase 6 : Meta-game & Social - À FAIRE
 
 ### 6.1 - Leaderboard
-- Score par équipe de 2 joueurs
-- Classement global
-- Classement par niveau (optionnel)
+- [ ] Score par équipe de 2 joueurs
+- [ ] Classement global
+- [ ] Classement par niveau (optionnel)
 
 ### 6.2 - Pause
-- Mettre le jeu en pause
-- Menu pause avec options (reprendre, quitter, recommencer)
+- [ ] Mettre le jeu en pause
+- [ ] Menu pause avec options (reprendre, quitter, recommencer)
 
 ---
 

@@ -83,6 +83,7 @@ game = "lunar-lander"
 [node name="LobbyManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("6_manager")
+player_count = 2
 
 [node name="LobbyServer" type="Node" parent="."]
 unique_name_in_owner = true

@@ -16,8 +16,12 @@ properties/1/replication_mode = 1
 properties/2/path = NodePath(".:thurster_enabled")
 properties/2/spawn = true
 properties/2/replication_mode = 2
+properties/3/path = NodePath(".:started")
+properties/3/spawn = true
+properties/3/replication_mode = 2
 
 [node name="Lander" type="CharacterBody2D"]
+slide_on_ceiling = false
 script = ExtResource("1_8ugvx")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]

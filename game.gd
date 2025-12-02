@@ -8,7 +8,7 @@ class_name Game
 @onready var waiting_room: WaitingRoom = %WaitingRoom
 @onready var player_spawner: PlayerSpawner = %PlayerSpawner
 @onready var lobby_server: LobbyServer = %LobbyServer
-@onready var level = %Level
+@onready var game_manager: GameManager = %GameManager
 
 const TYPES := {
 	"PLAYER": "PLAYER",
@@ -96,6 +96,7 @@ func _setup_server():
 	hide_screen(online_multiplayer_screen)
 
 	lobby_manager.on_game_start_requested.connect(func(slots):
+		
 		player_spawner.spawn_players(slots, func(index, slot: LobbySlot, avatar: Node):
 			var player = avatar as Player
 			if index == 0 :
@@ -105,6 +106,7 @@ func _setup_server():
 				player.rotation_enabled = false
 				player.thrust_enabled = true
 		)
+		game_manager.started = true
 		_on_game_started.rpc()
 	)
 

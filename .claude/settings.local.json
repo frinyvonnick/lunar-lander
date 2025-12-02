@@ -6,7 +6,13 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push)"
+      "Bash(git push)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)",
+      "WebSearch",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": []

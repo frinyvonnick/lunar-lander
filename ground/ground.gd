@@ -16,14 +16,9 @@ func _ready():
 func update_ground():
 	if not is_inside_tree():
 		return
-	
-	var viewport_width = get_viewport_rect().size.x
-	if viewport_width <= 0:
-		viewport_width = ProjectSettings.get_setting("display/window/size/viewport_width")
-		
-	var viewport_height = get_viewport_rect().size.y
-	if viewport_height <= 0:
-		viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")
+
+	var viewport_width = ProjectSettings.get_setting("display/window/size/viewport_width")
+	var viewport_height = ProjectSettings.get_setting("display/window/size/viewport_height")
 
 	var points: PackedVector2Array = PackedVector2Array()
 	

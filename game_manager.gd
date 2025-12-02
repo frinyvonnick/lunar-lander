@@ -31,6 +31,7 @@ func _back_to_main_menu():
 	if not online_multiplayer_screen:
 		return
 	# TODO: Let parent decide what to do through a signal
+	_reset()
 	multiplayer.multiplayer_peer.close()
 	online_multiplayer_screen.show()
 
